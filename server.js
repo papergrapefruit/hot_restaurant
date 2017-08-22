@@ -22,6 +22,25 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // look into this a bit more if you have time....may help with homework 
 // app.us(express.static("app/public"));
 
+// ===========================================================
+
+var reservations = [
+   { name: "Katie",
+       phone: 7042222222,
+       email: "katie@gmail.com",
+       id : 1234
+   },
+];
+
+// var waitlist = {
+
+// }
+
+// these are the different routes
+// ===========================================================
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "homepage.html"));
+});
 
 
 // Starts the server to begin listening
