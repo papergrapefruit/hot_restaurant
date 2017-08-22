@@ -17,8 +17,35 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+// static directory
+// the keys to the root files, can use a more basic virtual path in the html file 
+// look into this a bit more if you have time....may help with homework 
+// app.us(express.static("app/public"));
+
+// ===========================================================
+
+var reservations = [
+   { name: "Katie",
+       phone: 7042222222,
+       email: "katie@gmail.com",
+       id : 1234
+   },
+];
+
+// var waitlist = {
+
+// }
+
+// these are the different routes
+// ===========================================================
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "homepage.html"));
+});
+
+
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
+
