@@ -82,19 +82,19 @@
 
 <!-- script code below -->
 
-<script type="text/javacript">
+<script type="text/javascript">
 
 $(".submit").on("click", function(event) {
         event.preventDefault();
        
-        var newReservation = {
-            customerName: $("#reservation-name").val().trim(),
-            phoneNumber: $("#reservation-phone").val().trim(),
-            customerEmail: $("#reservation-email").val().trim(),
-            customerID: $("#reservation-id").val().trim()
+        var reservations = {
+            name: $("#reservation-name").val().trim(),
+            phone: $("#reservation-phone").val().trim(),
+            email: $("#reservation-email").val().trim(),
+            id: $("#reservation-id").val().trim()
         };
-        console.log(newReservtion);
-        $.post("/api/tables", newReservation,
+        console.log(reservation);
+        $.post("/api/tables", reservation,
             function(data) {
                 
                 if (data) {
